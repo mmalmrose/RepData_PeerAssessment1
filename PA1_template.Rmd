@@ -121,6 +121,9 @@ myplot <- myplot + scale_linetype_manual(values = c('dashed','solid'))
 myplot <- myplot +theme_classic()
 myplot <- myplot + guides(colour=guide_legend(override.aes=list(linetype=c(2,1))))
 myplot <- myplot + labs(title="Daily Number of Steps Taken", x="Time of Day (HHMM)", y="Steps Taken", color = "Time ofWeek")
-
 myplot
+#or if you prefer a multi-panel plot
+par(mfrow=c(1,2))
+plot(plotframe$interval, plotframe$Weekend_Steps,lty=2, type='l', xlab="Time of Day", ylab="Weekend Steps")
+plot(plotframe$interval, plotframe$Weekday_Steps, lty=1, type='l', xlab="Time of Day", ylab="Weekday Steps")
 ```
